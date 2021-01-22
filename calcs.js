@@ -51,7 +51,9 @@ function mode(arr) {
 	} else if (winner.length === 2) {
 		winnerNums = winner.map((num) => +num);
 		return `bimodal: [${winnerNums}]`; // for two-way ties
-	} else return 'No absolute mode';
+	} else if (winner.length === arr.length) {
+		return 'no mode';
+	} else return 'multimodal';
 }
 
 // median
